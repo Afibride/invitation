@@ -314,6 +314,10 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 .copy-btn:hover { background:rgba(228,195,110,.14); }
 .copy-btn svg { width:14px; height:14px; }
 .phone-list a { cursor:text; user-select:all; }
+.cover-autobar { width:min(70%,220px); height:2px; margin:10px auto 0; background:rgba(236,211,144,.2); overflow:hidden; }
+.cover-autobar span { display:block; height:100%; background:#ecd28c; transform-origin:left; animation:autobar 4s linear both; }
+@keyframes autobar { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@media (prefers-reduced-motion:reduce) { .cover-autobar span { animation:none; transform:scaleX(1); } }
 .copy-toast { min-height:14px; margin:4px 0 0; color:#f1d990; font-size:10px; letter-spacing:.06em; }
 @media (max-width:600px) {
   .phone-list { flex-direction:column; gap:6px; }
@@ -461,7 +465,8 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
               <span class="open-button-copy"><strong>Open the invitation</strong><small>with music</small></span>
               <span class="open-button-star">✦</span>
             </button>
-            <p class="cover-prompt">Tap once. The music begins as your card opens.</p>
+            <p class="cover-prompt">Your card opens in a moment. Tap to open it now with music.</p>
+            <div class="cover-autobar" aria-hidden="true"><span></span></div>
           </div>
         </section>
       </div>
@@ -517,7 +522,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
   function play() {
     var p = audio.play();
     if (p && p.catch) p.catch(function () {
-      $("audio-note").textContent = "Tap “Play music” to hear the worship song.";
+      $("audio-note").textContent = "Tap anywhere on the card to hear the worship song.";
       $("audio-note").hidden = false;
     });
   }
@@ -528,15 +533,31 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
     $("sound-label").textContent = "AUDIO UNAVAILABLE";
     $("audio-fallback").hidden = false;
   });
-  $("open").addEventListener("click", function () {
+  var opened = false, userPaused = false;
+  function openCard() {
+    if (opened) return;
+    opened = true;
+    clearTimeout(autoTimer);
     audio.preload = "auto";
     play();
     stage.classList.remove("invite-closed");
     stage.classList.add("invite-open");
     $("cover").setAttribute("aria-hidden", "true");
     window.scrollTo({ top: 0 });
+  }
+  // Open by itself after a short pause, for guests who never see the button.
+  var autoTimer = setTimeout(openCard, 4000);
+  $("open").addEventListener("click", openCard);
+  // Browsers only allow sound after a tap or key press: start the music on the first one anywhere.
+  function firstGesture() {
+    ["pointerup", "touchend", "keydown", "click"].forEach(function (t) { document.removeEventListener(t, firstGesture, true); });
+    if (audio.paused && !userPaused) play();
+  }
+  ["pointerup", "touchend", "keydown", "click"].forEach(function (t) { document.addEventListener(t, firstGesture, true); });
+  $("sound").addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (audio.paused) { userPaused = false; play(); } else { userPaused = true; audio.pause(); }
   });
-  $("sound").addEventListener("click", function () { audio.paused ? play() : audio.pause(); });
 
   // Copy phone numbers (tel: links do not work for every viewer)
   document.querySelectorAll("[data-copy]").forEach(function (btn) {
