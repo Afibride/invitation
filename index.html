@@ -170,6 +170,11 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 .invite-open .cover { opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-6%); }
 .invite-closed .stack { visibility:hidden; }
 
+/* Floating music prompt, shown only while the browser is blocking sound */
+.music-pill { position:fixed; z-index:60; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px)); display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border:0; border-radius:999px; background:var(--maroon); color:#fff6e8; font-size:14px; font-weight:700; letter-spacing:.04em; cursor:pointer; box-shadow:0 10px 26px rgba(60,20,8,.4); transform:translateX(-50%); animation:pill-pulse 1.8s ease-in-out infinite; }
+.music-pill svg { color:var(--amber); }
+@keyframes pill-pulse { 50% { box-shadow:0 10px 26px rgba(60,20,8,.4),0 0 0 10px rgba(110,28,18,.18); } }
+
 /* Reveal on open */
 .invite-open .reveal { animation:rise .8s cubic-bezier(.2,.75,.25,1) both; animation-delay:var(--d,0s); }
 @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
@@ -341,7 +346,8 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
       <div class="cover-autobar" aria-hidden="true"><span></span></div>
     </div>
   </section>
-  <audio id="audio" src="music.mp3" loop preload="none"></audio>
+  <button class="music-pill" id="music-pill" type="button" hidden><i data-lucide="volume-2"></i><span>Tap for music</span></button>
+  <audio id="audio" src="music.mp3" loop autoplay preload="auto"></audio>
 </main>
 
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -392,9 +398,10 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
     if (p && p.catch) p.catch(function () {
       $("audio-note").textContent = "Tap anywhere on the card to hear the worship song.";
       $("audio-note").hidden = false;
+      if (!userPaused) $("music-pill").hidden = false;
     });
   }
-  audio.addEventListener("play", function () { setPlaying(true); $("audio-note").hidden = true; });
+  audio.addEventListener("play", function () { setPlaying(true); $("audio-note").hidden = true; $("music-pill").hidden = true; });
   audio.addEventListener("pause", function () { setPlaying(false); });
   audio.addEventListener("error", function () {
     setPlaying(false);
@@ -418,6 +425,9 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
   }
   // Open by itself after a short pause, for guests who never see the button.
   var autoTimer = setTimeout(openCard, 4000);
+  // Try to start the music straight away; browsers that allow it will play.
+  play();
+  $("music-pill").addEventListener("click", function () { userPaused = false; play(); });
   $("open").addEventListener("click", openCard);
   // Browsers only allow sound after a tap or key press: start the music on the first one anywhere.
   function firstGesture() {
@@ -427,7 +437,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
   ["pointerup", "touchend", "keydown", "click"].forEach(function (t) { document.addEventListener(t, firstGesture, true); });
   $("sound").addEventListener("click", function (e) {
     e.stopPropagation();
-    if (audio.paused) { userPaused = false; play(); } else { userPaused = true; audio.pause(); }
+    if (audio.paused) { userPaused = false; play(); } else { userPaused = true; audio.pause(); $("music-pill").hidden = true; }
   });
 
   // Copy phone numbers (call links do not work in every app)
