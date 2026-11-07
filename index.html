@@ -398,7 +398,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
     if (p && p.catch) p.catch(function () {
       $("audio-note").textContent = "Tap anywhere on the card to hear the worship song.";
       $("audio-note").hidden = false;
-      if (!userPaused) $("music-pill").hidden = false;
+      if (opened && !userPaused) $("music-pill").hidden = false;
     });
   }
   audio.addEventListener("play", function () { setPlaying(true); $("audio-note").hidden = true; $("music-pill").hidden = true; });
