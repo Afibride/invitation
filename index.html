@@ -143,6 +143,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 .sound-icon svg.lucide { width:15px; height:15px; }
 
 /* Cover */
+.cover { cursor:pointer; }
 .cover { position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center; overflow-y:auto; padding:calc(18px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
   background:radial-gradient(ellipse at 50% 0%,#fffaf0 0%,#f8e6c6 50%,#ecd0a0 100%); transition:opacity .9s ease,visibility .9s ease,transform 1s cubic-bezier(.6,.05,.3,1); }
 .cover::before { content:""; position:absolute; inset:12px; border:1px solid var(--line); pointer-events:none; }
@@ -342,8 +343,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
       <p class="cover-title">Thanksgiving Service</p>
       <p class="cover-date">SUNDAY · DECEMBER 13, 2026 · 9:30 AM</p>
       <button class="open-btn" id="open" type="button"><i data-lucide="music-2"></i><span>OPEN THE INVITATION<small>with music</small></span></button>
-      <p class="cover-prompt">Your card opens in a moment. Tap to open it now with music.</p>
-      <div class="cover-autobar" aria-hidden="true"><span></span></div>
+      <p class="cover-prompt">Tap to open your invitation.</p>
     </div>
   </section>
   <button class="music-pill" id="music-pill" type="button" hidden><i data-lucide="volume-2"></i><span>Tap for music</span></button>
@@ -414,7 +414,6 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
   function openCard() {
     if (opened) return;
     opened = true;
-    clearTimeout(autoTimer);
     audio.preload = "auto";
     play();
     stage.classList.remove("invite-closed");
@@ -423,8 +422,8 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
     document.documentElement.style.overflow = "";
     window.scrollTo({ top: 0 });
   }
-  // Open by itself after a short pause, for guests who never see the button.
-  var autoTimer = setTimeout(openCard, 4000);
+  // The card waits for the guest: a tap anywhere on the cover opens it and starts the music.
+  $("cover").addEventListener("click", openCard);
   // Try to start the music straight away; browsers that allow it will play.
   play();
   $("music-pill").addEventListener("click", function () { userPaused = false; play(); });
