@@ -7,22 +7,25 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Thanksgiving Service Invitation">
 <meta property="og:description" content="You are invited to the Thanksgiving Service of the family of Pastor Engineer Tanyi Ma-Apoh Augustine. Sunday, December 13, 2026, 9:30 AM, Yaoundé.">
-<meta property="og:url" content="https://afibride.github.io/invitation/">
-<meta property="og:image" content="https://afibride.github.io/invitation/family.jpg">
+<meta property="og:url" content="https://tanyi-maapoh-thanksgiving.vercel.app/">
+<meta property="og:image" content="https://tanyi-maapoh-thanksgiving.vercel.app/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Tanyi Ma-Apoh Thanksgiving</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="theme-color" content="#a9441b">
+<meta name="theme-color" content="#1f45b8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>
 /* Harvest flyer: one warm autumn card (photo beside a script title, info strip, pumpkin scene), then a details card. Single light look by choice. */
 :root {
-  --bg:#ecdcc2; --paper:#fff8ec; --paper-deep:#f6e2bf; --tile:#fdf1dc;
-  --ink:#3a2314; --muted:#7b5b42; --rust:#a9441b; --orange:#d9772a; --amber:#e6a240; --maroon:#6e1c12; --wood:#7a4a26; --wheat:#d6a24a;
-  --line:rgba(169,68,27,.3);
+  /* Royal blue and gold. Variable names kept from the earlier harvest palette. */
+  --bg:#dbe4f7; --paper:#fbfcff; --paper-deep:#e3eafb; --tile:#eff3fd;
+  --ink:#14204a; --muted:#56628a; --rust:#1f45b8; --orange:#3d6ae0; --amber:#e3b64c; --maroon:#0f2a80; --wood:#7a4a26; --wheat:#d6a24a;
+  --line:rgba(31,69,184,.28);
   --script:"Great Vibes","Playfair Display",Georgia,serif;
   --display:"Playfair Display",Georgia,serif;
   --body:"Cormorant Garamond",Georgia,serif;
@@ -37,8 +40,8 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .sprite { position:absolute; width:0; height:0; overflow:hidden; }
 
 .stage { position:relative; min-height:100vh; overflow:hidden; padding-block:28px 40px; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px));
-  background:radial-gradient(ellipse at 72% -5%,#fff7e8 0%,rgba(255,247,232,0) 55%),radial-gradient(ellipse at 0% 100%,#e2c89f 0%,rgba(226,200,159,0) 60%),linear-gradient(165deg,#f3e6d0,#e4cfac); }
-.stage::before { content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(115deg,rgba(255,255,255,0) 0 90px,rgba(255,250,238,.22) 90px 150px,rgba(255,255,255,0) 150px 260px); }
+  background:radial-gradient(ellipse at 72% -5%,#4f78e8 0%,rgba(79,120,232,0) 55%),radial-gradient(ellipse at 0% 100%,#0b2272 0%,rgba(11,34,114,0) 60%),linear-gradient(165deg,#2448bf,#132f8f); }
+.stage::before { content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(115deg,rgba(255,255,255,0) 0 90px,rgba(255,255,255,.05) 90px 150px,rgba(255,255,255,0) 150px 260px); }
 .stack { position:relative; z-index:1; display:grid; gap:20px; width:min(100%,680px); margin:0 auto; }
 
 /* Falling leaves */
@@ -50,10 +53,12 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .falling svg:nth-child(4) { left:63%; color:var(--maroon); width:18px; height:18px; animation-duration:23s; animation-delay:-3s; }
 .falling svg:nth-child(5) { left:81%; color:var(--rust); animation-duration:18s; animation-delay:-9s; }
 .falling svg:nth-child(6) { left:93%; color:var(--amber); width:15px; height:15px; animation-duration:25s; animation-delay:-15s; }
+.falling svg:nth-child(n) { color:var(--amber); }
+.falling svg:nth-child(2n) { color:#ffffff; opacity:.35; }
 @keyframes fall { 0% { transform:translate(0,0) rotate(0); } 25% { transform:translate(30px,28vh) rotate(90deg); } 50% { transform:translate(-20px,56vh) rotate(200deg); } 75% { transform:translate(26px,84vh) rotate(280deg); } 100% { transform:translate(-10px,118vh) rotate(380deg); } }
 
 /* Flyer */
-.flyer { position:relative; overflow:hidden; background:radial-gradient(circle at 78% 18%,#fffbf2 0%,#fcefd7 45%,#f3d6a6 100%); box-shadow:0 30px 60px rgba(90,50,20,.28),0 6px 14px rgba(90,50,20,.14); }
+.flyer { position:relative; overflow:hidden; background:radial-gradient(circle at 78% 18%,#ffffff 0%,#f1f5ff 45%,#d9e3fa 100%); box-shadow:0 30px 60px rgba(5,15,60,.4),0 6px 14px rgba(5,15,60,.2); }
 .flyer-leaves { position:absolute; top:-14px; right:-12px; width:170px; height:130px; pointer-events:none; }
 .flyer-leaves svg { position:absolute; }
 .flyer-leaves svg:nth-child(1) { right:10px; top:6px; width:70px; height:70px; color:var(--rust); transform:rotate(-20deg); }
@@ -63,15 +68,25 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .flyer-body { position:relative; padding:30px 28px 0; }
 .flyer-top { display:grid; grid-template-columns:.92fr 1.08fr; gap:22px; align-items:center; }
 .host { position:relative; margin:0 0 22px; }
-.host-photo { aspect-ratio:3/4; max-width:100%; overflow:hidden; border:4px solid #fffaf1; box-shadow:0 12px 26px rgba(80,40,15,.28); background:#e9d3ae; }
-.host-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 40%; }
-.nameplate { position:absolute; left:-10px; right:18px; bottom:-20px; padding:9px 12px 10px; background:var(--maroon); color:#fff6e8; box-shadow:0 6px 14px rgba(60,20,8,.3); }
-.nameplate::after { content:""; position:absolute; left:0; bottom:-8px; border-top:8px solid #3f0e08; border-left:10px solid transparent; }
+.host-photo { aspect-ratio:3/4; max-width:100%; overflow:hidden; border:4px solid #fff; box-shadow:0 12px 26px rgba(10,25,80,.3); background:#2449c4; }
+.calvary { display:block; width:100%; height:100%; }
+.calvary-rays { transform-origin:180px 170px; animation:calvary-spin 90s linear infinite; }
+.calvary-glow { transform-origin:180px 170px; animation:calvary-glow 5s ease-in-out infinite; }
+.calvary-beam { animation:calvary-beam 6s ease-in-out infinite; }
+.calvary-stars circle { animation:calvary-twinkle 3.2s ease-in-out infinite; }
+.calvary-stars circle:nth-child(2n) { animation-delay:1.1s; }
+.calvary-stars circle:nth-child(3n) { animation-delay:2s; }
+@keyframes calvary-spin { to { transform:rotate(360deg); } }
+@keyframes calvary-glow { 50% { opacity:.8; transform:scale(1.06); } }
+@keyframes calvary-beam { 50% { opacity:.85; } }
+@keyframes calvary-twinkle { 0%,100% { opacity:.2; } 50% { opacity:1; } }
+.nameplate { position:absolute; left:-10px; right:18px; bottom:-20px; padding:9px 12px 10px; background:var(--maroon); color:#f3f6ff; box-shadow:0 6px 14px rgba(5,15,60,.35); }
+.nameplate::after { content:""; position:absolute; left:0; bottom:-8px; border-top:8px solid #071a58; border-left:10px solid transparent; }
 .nameplate small { display:block; color:var(--amber); font-size:9.5px; font-weight:700; letter-spacing:.2em; }
 .nameplate strong { display:block; margin-top:2px; font-family:var(--display); font-size:14.5px; font-weight:700; line-height:1.2; letter-spacing:.01em; }
 .title-block { text-align:center; min-width:0; container-type:inline-size; }
 .join { margin:0; color:var(--ink); font-size:11.5px; font-weight:600; letter-spacing:.32em; }
-.script-title { margin:2px 0 0; color:var(--rust); font-family:var(--script); font-size:clamp(44px,22cqi,84px); font-weight:400; line-height:1; white-space:nowrap; text-shadow:0 2px 0 rgba(255,255,255,.6),0 6px 16px rgba(169,68,27,.18); }
+.script-title { margin:2px 0 0; color:var(--rust); font-family:var(--script); font-size:clamp(44px,22cqi,84px); font-weight:400; line-height:1; white-space:nowrap; text-shadow:0 2px 0 rgba(255,255,255,.6),0 6px 16px rgba(31,69,184,.18); }
 .caps-title { margin:4px 0 0; color:var(--maroon); font-family:var(--display); font-size:clamp(24px,4.6vw,34px); font-weight:800; letter-spacing:.16em; }
 .triad { display:flex; align-items:center; justify-content:center; gap:8px; margin:8px 0 12px; color:var(--muted); font-size:10.5px; font-weight:700; letter-spacing:.18em; }
 .triad i { width:4px; height:4px; background:var(--orange); transform:rotate(45deg); }
@@ -91,10 +106,10 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .welcome { position:absolute; right:20px; bottom:40px; max-width:44%; text-align:center; }
 .welcome p { margin:0; color:var(--maroon); font-family:var(--script); font-size:clamp(34px,6.4vw,48px); line-height:1; }
 .welcome span { display:block; height:2px; margin:4px auto 0; width:80%; background:linear-gradient(90deg,transparent,var(--rust),transparent); }
-.tagline { margin:0; padding:11px 16px; background:var(--maroon); color:#fbe9cc; text-align:center; font-size:10.5px; font-weight:600; letter-spacing:.26em; }
+.tagline { margin:0; padding:11px 16px; background:var(--maroon); color:#f6e3ad; text-align:center; font-size:10.5px; font-weight:600; letter-spacing:.26em; }
 
 /* Details card */
-.details { display:grid; gap:20px; padding:28px clamp(18px,5vw,40px) 26px; background:var(--paper); border-top:5px solid var(--rust); box-shadow:0 22px 46px rgba(90,50,20,.2); }
+.details { display:grid; gap:20px; padding:28px clamp(18px,5vw,40px) 26px; background:var(--paper); border-top:5px solid var(--amber); box-shadow:0 22px 46px rgba(5,15,60,.35); }
 .dedication { margin:0 auto; max-width:470px; color:var(--ink); text-align:center; font-family:var(--body); font-size:19px; font-style:italic; font-weight:500; line-height:1.45; text-wrap:balance; }
 .section-label { margin:0 0 9px; color:var(--rust); text-align:center; font-size:10.5px; font-weight:700; letter-spacing:.24em; }
 .countdown-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
@@ -104,8 +119,8 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .countdown-done { margin:0; color:var(--rust); text-align:center; font-family:var(--script); font-size:40px; }
 .actions { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
 .actions a { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:46px; padding:8px 10px; border:1.5px solid var(--rust); background:transparent; color:var(--rust); font-size:13px; font-weight:700; text-decoration:none; transition:background .2s ease,color .2s ease,transform .2s ease; }
-.actions a:first-child { background:var(--rust); color:#fff8ec; }
-.actions a:hover { background:var(--maroon); border-color:var(--maroon); color:#fff8ec; transform:translateY(-1px); }
+.actions a:first-child { background:var(--rust); color:#fff; }
+.actions a:hover { background:var(--maroon); border-color:var(--maroon); color:#fff; transform:translateY(-1px); }
 .reception { display:flex; align-items:center; justify-content:center; gap:14px; padding:16px; background:var(--tile); border:1px dashed var(--line); }
 .reception .info-icon { width:46px; height:46px; }
 .reception small { display:block; color:var(--rust); font-size:10px; font-weight:700; letter-spacing:.14em; }
@@ -115,7 +130,7 @@ button:focus-visible,a:focus-visible { outline:3px solid var(--orange); outline-
 .scripture p { margin:0; font-family:var(--body); font-size:18px; font-style:italic; font-weight:500; line-height:1.45; }
 .scripture cite { display:block; margin-top:6px; color:var(--rust); font-size:10.5px; font-style:normal; font-weight:700; letter-spacing:.2em; }
 .joy { margin:0; text-align:center; color:var(--maroon); font-family:var(--script); font-size:clamp(28px,5.4vw,36px); line-height:1.15; }
-.rsvp { padding:16px 14px 12px; background:var(--maroon); color:#fff3e0; text-align:center; }
+.rsvp { padding:16px 14px 12px; background:var(--maroon); color:#f3f6ff; text-align:center; }
 .rsvp > p { margin:0 0 8px; color:var(--amber); font-size:10px; font-weight:700; letter-spacing:.22em; }
 .phones { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px 18px; }
 .phone-row { display:flex; align-items:center; gap:8px; }
@@ -145,7 +160,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 /* Cover */
 .cover { cursor:pointer; }
 .cover { position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center; overflow-y:auto; padding:calc(18px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
-  background:radial-gradient(ellipse at 50% 0%,#fffaf0 0%,#f8e6c6 50%,#ecd0a0 100%); transition:opacity .9s ease,visibility .9s ease,transform 1s cubic-bezier(.6,.05,.3,1); }
+  background:radial-gradient(ellipse at 50% 0%,#ffffff 0%,#e9effd 50%,#c9d6f6 100%); transition:opacity .9s ease,visibility .9s ease,transform 1s cubic-bezier(.6,.05,.3,1); }
 .cover::before { content:""; position:absolute; inset:12px; border:1px solid var(--line); pointer-events:none; }
 .cover-leaf { position:absolute; width:90px; height:90px; pointer-events:none; }
 .cover-leaf.l1 { top:-14px; left:-10px; color:var(--rust); transform:rotate(-30deg); }
@@ -156,25 +171,29 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 .cover-eyebrow { margin:0; color:var(--rust); font-size:10.5px; font-weight:700; letter-spacing:.3em; }
 .cover-family { margin:10px 0 0; color:var(--muted); font-size:10px; font-weight:600; letter-spacing:.24em; }
 .cover-name { margin:2px 0 0; font-family:var(--display); font-size:clamp(20px,5vw,26px); font-weight:700; line-height:1.2; text-wrap:balance; }
-.cover-photo { width:min(70%,230px); aspect-ratio:3/4; max-height:34vh; max-width:100%; margin:14px 0 4px; border:4px solid #fffaf1; box-shadow:0 14px 30px rgba(80,40,15,.28); overflow:hidden; transform:rotate(-2deg); }
-.cover-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 38%; }
+.cover-photo { width:min(70%,230px); aspect-ratio:3/4; max-height:30vh; max-width:100%; margin:14px 0 4px; border:4px solid #fff; box-shadow:0 14px 30px rgba(10,25,80,.3); overflow:hidden; transform:rotate(-2deg); background:#2449c4; }
 .cover-title { margin:6px 0 0; color:var(--rust); font-family:var(--script); font-size:clamp(46px,12vw,60px); line-height:1; }
-.cover-date { margin:4px 0 16px; color:var(--ink); font-size:11px; font-weight:700; letter-spacing:.18em; }
-.open-btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; width:min(100%,280px); min-height:56px; padding:10px 18px; border:0; background:linear-gradient(120deg,var(--rust),var(--orange)); color:#fff8ec; font-size:13px; font-weight:700; letter-spacing:.08em; cursor:pointer; box-shadow:0 10px 24px rgba(169,68,27,.35); animation:breathe 2.6s ease-in-out infinite; }
+.cover-date { margin:4px 0 12px; color:var(--ink); font-size:11px; font-weight:700; letter-spacing:.18em; }
+.cover-countdown { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; width:min(100%,300px); margin:0 0 16px; }
+.cover-countdown div { display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 2px 7px; background:rgba(255,255,255,.75); border:1px solid var(--line); border-top:2px solid var(--amber); }
+.cover-countdown strong { color:var(--rust); font-family:var(--display); font-size:24px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums; }
+.cover-countdown small { color:var(--muted); font-size:8.5px; font-weight:700; letter-spacing:.14em; }
+.cover-countdown-done { margin:0 0 16px; color:var(--rust); font-family:var(--script); font-size:32px; line-height:1; }
+.open-btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; width:min(100%,280px); min-height:56px; padding:10px 18px; border:0; background:linear-gradient(120deg,var(--maroon),var(--orange)); color:#fff; font-size:13px; font-weight:700; letter-spacing:.08em; cursor:pointer; box-shadow:0 10px 24px rgba(31,69,184,.35); animation:breathe 2.6s ease-in-out infinite; }
 .open-btn small { display:block; font-family:var(--body); font-size:15px; font-style:italic; font-weight:600; letter-spacing:.02em; opacity:.9; }
 .open-btn span { display:flex; flex-direction:column; align-items:flex-start; line-height:1.15; text-align:left; }
-@keyframes breathe { 50% { box-shadow:0 10px 24px rgba(169,68,27,.35),0 0 0 8px rgba(217,119,42,.16); } }
+@keyframes breathe { 50% { box-shadow:0 10px 24px rgba(31,69,184,.35),0 0 0 8px rgba(227,182,76,.28); } }
 .cover-prompt { margin:10px 0 0; color:var(--muted); font-family:var(--body); font-size:16px; font-style:italic; }
-.cover-autobar { width:min(70%,220px); height:2px; margin:10px auto 0; background:rgba(169,68,27,.18); overflow:hidden; }
+.cover-autobar { width:min(70%,220px); height:2px; margin:10px auto 0; background:rgba(31,69,184,.18); overflow:hidden; }
 .cover-autobar span { display:block; height:100%; background:var(--rust); transform-origin:left; animation:autobar 4s linear both; }
 @keyframes autobar { from { transform:scaleX(0); } to { transform:scaleX(1); } }
 .invite-open .cover { opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-6%); }
 .invite-closed .stack { visibility:hidden; }
 
 /* Floating music prompt, shown only while the browser is blocking sound */
-.music-pill { position:fixed; z-index:60; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px)); display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border:0; border-radius:999px; background:var(--maroon); color:#fff6e8; font-size:14px; font-weight:700; letter-spacing:.04em; cursor:pointer; box-shadow:0 10px 26px rgba(60,20,8,.4); transform:translateX(-50%); animation:pill-pulse 1.8s ease-in-out infinite; }
+.music-pill { position:fixed; z-index:60; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px)); display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border:0; border-radius:999px; background:var(--maroon); color:#fff; font-size:14px; font-weight:700; letter-spacing:.04em; cursor:pointer; box-shadow:0 10px 26px rgba(5,15,60,.4); transform:translateX(-50%); animation:pill-pulse 1.8s ease-in-out infinite; }
 .music-pill svg { color:var(--amber); }
-@keyframes pill-pulse { 50% { box-shadow:0 10px 26px rgba(60,20,8,.4),0 0 0 10px rgba(110,28,18,.18); } }
+@keyframes pill-pulse { 50% { box-shadow:0 10px 26px rgba(5,15,60,.4),0 0 0 10px rgba(227,182,76,.3); } }
 
 /* Reveal on open */
 .invite-open .reveal { animation:rise .8s cubic-bezier(.2,.75,.25,1) both; animation-delay:var(--d,0s); }
@@ -199,6 +218,14 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
   .actions { grid-template-columns:1fr; }
   .reception { flex-direction:column; text-align:center; }
   .phones { flex-direction:column; }
+  .cover-countdown strong { font-size:21px; }
+  .cover-countdown small { font-size:7.5px; letter-spacing:.08em; }
+}
+@media (max-height:720px) {
+  .cover-photo { max-height:24vh; margin-top:10px; }
+  .cover-title { font-size:44px; }
+  .cover-countdown { margin-bottom:12px; }
+  .cover-countdown div { padding:6px 2px 5px; }
 }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
@@ -227,6 +254,33 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
         <ellipse cx="14" cy="54" rx="4.5" ry="9" transform="rotate(-28 14 54)"/><ellipse cx="26" cy="54" rx="4.5" ry="9" transform="rotate(28 26 54)"/>
         <ellipse cx="14" cy="68" rx="4.5" ry="9" transform="rotate(-28 14 68)"/><ellipse cx="26" cy="68" rx="4.5" ry="9" transform="rotate(28 26 68)"/></g>
     </symbol>
+
+    <!-- Calvary scene: the cross on the hill with light shining over it -->
+    <linearGradient id="cv-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1f6e"/><stop offset=".36" stop-color="#2449c4"/><stop offset=".64" stop-color="#7d9be8"/><stop offset=".82" stop-color="#f6dc95"/><stop offset="1" stop-color="#fbeec6"/></linearGradient>
+    <radialGradient id="cv-glow" cx="180" cy="170" r="210" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".18" stop-color="#fff6d6" stop-opacity=".95"/><stop offset=".45" stop-color="#f3d27a" stop-opacity=".45"/><stop offset="1" stop-color="#f3d27a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cv-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".7" stop-color="#fff3c9" stop-opacity=".35"/><stop offset="1" stop-color="#fff3c9" stop-opacity="0"/></linearGradient>
+    <linearGradient id="cv-ray" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fffbe8" stop-opacity=".7"/><stop offset="1" stop-color="#fffbe8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="cv-hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13287a"/><stop offset="1" stop-color="#060f3d"/></linearGradient>
+    <filter id="cv-soft" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+    <g id="cv-rays" fill="url(#cv-ray)">
+      <polygon points="180,170 560,152 560,188"/><polygon points="180,170 560,152 560,188" transform="rotate(22.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(45 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(67.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(90 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(112.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(135 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(157.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(180 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(202.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(225 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(247.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(270 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(292.5 180 170)"/>
+      <polygon points="180,170 560,152 560,188" transform="rotate(315 180 170)"/><polygon points="180,170 560,152 560,188" transform="rotate(337.5 180 170)"/>
+    </g>
+    <g id="cv-land">
+      <g filter="url(#cv-soft)" fill="#fff" opacity=".55"><ellipse cx="40" cy="250" rx="80" ry="14"/><ellipse cx="330" cy="232" rx="80" ry="13"/><ellipse cx="270" cy="290" rx="60" ry="10"/></g>
+      <path d="M0 480V400C60 375 120 332 180 318C240 332 300 375 360 400V480Z" fill="url(#cv-hill)"/>
+      <g fill="#0a1a5a" stroke="#f3d27a" stroke-width="1.2" stroke-opacity=".6">
+        <path d="M171 100h18v226h-18zM128 150h104v15H128z"/>
+        <path d="M74 272h9v100h-9zM55 294h47v8H55z" opacity=".9"/>
+        <path d="M277 272h9v100h-9zM258 294h47v8h-47z" opacity=".9"/>
+      </g>
+    </g>
   </defs>
 </svg>
 
@@ -241,7 +295,7 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
       <div class="flyer-body">
         <div class="flyer-top">
           <figure class="host reveal" style="--d:.15s">
-            <div class="host-photo"><img src="family.jpg" alt="The Tanyi–Ma-Apoh family gathered together"></div>
+            <div class="host-photo"><svg class="calvary" viewBox="0 0 360 480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="The cross of Calvary on a hill, with heavenly light shining over it"><rect width="360" height="480" fill="url(#cv-sky)"/><g class="calvary-rays"><use href="#cv-rays"/></g><circle class="calvary-glow" cx="180" cy="170" r="210" fill="url(#cv-glow)"/><polygon class="calvary-beam" points="155,0 205,0 262,330 98,330" fill="url(#cv-beam)" opacity=".55"/><use href="#cv-land"/><g class="calvary-stars" fill="#fff8dc"><circle cx="70" cy="80" r="1.6"/><circle cx="290" cy="60" r="1.3"/><circle cx="320" cy="120" r="1.8"/><circle cx="40" cy="150" r="1.2"/><circle cx="240" cy="30" r="1.1"/><circle cx="120" cy="40" r="1.4"/></g></svg></div>
             <figcaption class="nameplate"><small>THE FAMILY OF</small><strong>Pastor Engineer Tanyi Ma-Apoh Augustine</strong></figcaption>
           </figure>
           <div class="title-block reveal" style="--d:.3s">
@@ -267,12 +321,12 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
           <use href="#wheat" x="104" y="22" width="34" height="150" transform="rotate(-10 121 170)"/>
           <use href="#wheat" x="122" y="14" width="36" height="158"/>
           <use href="#wheat" x="140" y="26" width="32" height="146" transform="rotate(12 156 170)"/>
-          <use href="#pumpkin" x="150" y="62" width="160" height="122" style="color:#d9772a"/>
-          <use href="#pumpkin" x="290" y="112" width="78" height="60" style="color:#efdcb8"/>
-          <use href="#pumpkin" x="20" y="128" width="58" height="44" style="color:#e6a240"/>
-          <use href="#leaf" x="356" y="140" width="34" height="34" style="color:#a9441b" transform="rotate(30 373 157)"/>
-          <use href="#leaf" x="118" y="146" width="28" height="28" style="color:#6e1c12" transform="rotate(-40 132 160)"/>
-          <use href="#leaf" x="0" y="112" width="30" height="30" style="color:#d9772a" transform="rotate(60 15 127)"/>
+          <use href="#pumpkin" x="150" y="62" width="160" height="122" style="color:#e3b64c"/>
+          <use href="#pumpkin" x="290" y="112" width="78" height="60" style="color:#f4e6bd"/>
+          <use href="#pumpkin" x="20" y="128" width="58" height="44" style="color:#c9962f"/>
+          <use href="#leaf" x="356" y="140" width="34" height="34" style="color:#1f45b8" transform="rotate(30 373 157)"/>
+          <use href="#leaf" x="118" y="146" width="28" height="28" style="color:#0f2a80" transform="rotate(-40 132 160)"/>
+          <use href="#leaf" x="0" y="112" width="30" height="30" style="color:#3d6ae0" transform="rotate(60 15 127)"/>
         </svg>
         <div class="welcome"><p>You Are Welcome</p><span></span></div>
       </div>
@@ -339,9 +393,16 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
       <p class="cover-eyebrow">YOU ARE CORDIALLY INVITED</p>
       <p class="cover-family">THE FAMILY OF</p>
       <h2 class="cover-name">Pastor Engineer Tanyi Ma-Apoh Augustine</h2>
-      <div class="cover-photo"><img src="family.jpg" alt=""></div>
+      <div class="cover-photo" aria-hidden="true"><svg class="calvary" viewBox="0 0 360 480" preserveAspectRatio="xMidYMid slice"><rect width="360" height="480" fill="url(#cv-sky)"/><g class="calvary-rays"><use href="#cv-rays"/></g><circle class="calvary-glow" cx="180" cy="170" r="210" fill="url(#cv-glow)"/><polygon class="calvary-beam" points="155,0 205,0 262,330 98,330" fill="url(#cv-beam)" opacity=".55"/><use href="#cv-land"/><g class="calvary-stars" fill="#fff8dc"><circle cx="70" cy="80" r="1.6"/><circle cx="290" cy="60" r="1.3"/><circle cx="320" cy="120" r="1.8"/><circle cx="40" cy="150" r="1.2"/><circle cx="240" cy="30" r="1.1"/><circle cx="120" cy="40" r="1.4"/></g></svg></div>
       <p class="cover-title">Thanksgiving Service</p>
       <p class="cover-date">SUNDAY · DECEMBER 13, 2026 · 9:30 AM</p>
+      <div class="cover-countdown" id="cover-countdown" role="timer" aria-label="Time until the service">
+        <div><strong data-cunit="d">–</strong><small>DAYS</small></div>
+        <div><strong data-cunit="h">–</strong><small>HOURS</small></div>
+        <div><strong data-cunit="m">–</strong><small>MINS</small></div>
+        <div><strong data-cunit="s">–</strong><small>SECS</small></div>
+      </div>
+      <p class="cover-countdown-done" id="cover-countdown-done" hidden>Today we give thanks!</p>
       <button class="open-btn" id="open" type="button"><i data-lucide="music-2"></i><span>OPEN THE INVITATION<small>with music</small></span></button>
       <p class="cover-prompt">Tap to open your invitation.</p>
     </div>
@@ -353,10 +414,25 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script>
 (function () {
-  var SHARE_URL = "https://afibride.github.io/invitation/";
+  var SHARE_URL = "https://tanyi-maapoh-thanksgiving.vercel.app/";
   var START = Date.UTC(2026, 11, 13, 8, 30); // 9:30 AM WAT
   var SHARE_TEXT = "You are invited to the Thanksgiving Service of the family of Pastor Engineer Tanyi Ma-Apoh Augustine. Sunday, December 13, 2026 at 9:30 AM, Temple of Prayer Ministry, Eloundem 1 (chez Nchungi), Yaoundé. Reception after at Etokos Residence.";
   var $ = function (id) { return document.getElementById(id); };
+
+  // Countdown line for the WhatsApp message, worked out when the guest shares.
+  function plural(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
+  function countdownLine() {
+    var diff = START - Date.now();
+    if (diff <= 0) return diff > -6 * 36e5 ? "🎉 *Today is the day — we give thanks together!*" : "";
+    var d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24, m = Math.floor(diff / 6e4) % 60;
+    var parts = d > 0 ? [plural(d, "day"), plural(h, "hour")] : [plural(h, "hour"), plural(m, "minute")];
+    return "⏳ *Countdown: only " + parts.join(" & ") + " to go!*";
+  }
+  function shareMessage() {
+    var line = countdownLine();
+    return SHARE_TEXT + (line ? "\n\n" + line : "") + "\n\n" + SHARE_URL;
+  }
+  function updateShareLink() { $("wa-link").href = "https://wa.me/?text=" + encodeURIComponent(shareMessage()); }
 
   $("map-link").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Temple of Prayer Ministry, Eloundem, Yaoundé, Cameroon");
   $("cal-link").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
@@ -364,22 +440,29 @@ svg.lucide,[data-lucide] { display:inline-block; width:18px; height:18px; flex:0
     "&dates=20261213T083000Z/20261213T133000Z" +
     "&location=" + encodeURIComponent("Temple of Prayer Ministry, Eloundem 1 (chez Nchungi), Yaoundé") +
     "&details=" + encodeURIComponent("Service at 9:30 AM. Reception immediately after at Etokos Residence, beside Light World Mission College. RSVP: 675 758 05 / 676 408 14");
-  $("wa-link").href = "https://wa.me/?text=" + encodeURIComponent(SHARE_TEXT + (SHARE_URL.indexOf("http") === 0 ? "\n" + SHARE_URL : ""));
+  updateShareLink();
+  $("wa-link").addEventListener("click", updateShareLink);
 
   function icons() { if (window.lucide) window.lucide.createIcons(); }
   icons();
 
   // Countdown
-  var cells = {};
-  document.querySelectorAll("[data-unit]").forEach(function (el) { cells[el.dataset.unit] = el; });
+  // The same countdown shows on the cover and inside the card.
+  var cells = { d: [], h: [], m: [], s: [] };
+  document.querySelectorAll("[data-unit],[data-cunit]").forEach(function (el) { cells[el.dataset.unit || el.dataset.cunit].push(el); });
   function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function set(unit, v) { cells[unit].forEach(function (el) { el.textContent = v; }); }
   function tick() {
     var diff = Math.max(0, START - Date.now());
-    if (diff === 0) { $("countdown").hidden = true; $("countdown-done").hidden = false; return; }
-    cells.d.textContent = Math.floor(diff / 864e5);
-    cells.h.textContent = pad(Math.floor(diff / 36e5) % 24);
-    cells.m.textContent = pad(Math.floor(diff / 6e4) % 60);
-    cells.s.textContent = pad(Math.floor(diff / 1e3) % 60);
+    if (diff === 0) {
+      $("countdown").hidden = true; $("countdown-done").hidden = false;
+      $("cover-countdown").hidden = true; $("cover-countdown-done").hidden = false;
+      return;
+    }
+    set("d", Math.floor(diff / 864e5));
+    set("h", pad(Math.floor(diff / 36e5) % 24));
+    set("m", pad(Math.floor(diff / 6e4) % 60));
+    set("s", pad(Math.floor(diff / 1e3) % 60));
   }
   tick(); setInterval(tick, 1000);
 
